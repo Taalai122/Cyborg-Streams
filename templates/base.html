@@ -67,9 +67,17 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="{% url 'browse' %}">Browse</a></li>
+                        <li><a href="{% url 'game_list' %}">Games</a></li>
                         <li><a href="{% url 'details' %}">Details</a></li>
                         <li><a href="{% url 'streams' %}">Streams</a></li>
+
+                        {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                        {% endif %}
+
+
                         <li><a href="{% url 'profile' %}">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
                     </ul>
                     <a class='menu-trigger'>
