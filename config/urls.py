@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('apps.accounts.urls')),
     path('', include('apps.main.urls')),
     path('', include('apps.games.urls')),
+    path('', include('apps.streams.urls')),
 ]
 
 
